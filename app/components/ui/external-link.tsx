@@ -10,6 +10,10 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
   children,
   ...props
 }) => {
+  if (!props.href) {
+    return null; // or you could render a fallback UI
+  }
+
   return (
     <Link target="_blank" rel="noopener noreferrer" {...props}>
       {children}
